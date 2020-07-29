@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :require_login, except: %i[new create]
 
   def show; end
 
@@ -21,12 +22,18 @@ class UsersController < ApplicationController
 
   private
 
+  def require_login
+    unless session[:current_user_id]
+      flash[:error] = 'You must be logged in to view this page'
+      redirect_to new_login_url
+    end
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:username)
   end
