@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def require_login
     unless session[:current_user_id]
       flash[:error] = 'You must be logged in to view this page'
-      redirect_to new_login_url
+      redirect_to new_session_path
     end
   end
 
