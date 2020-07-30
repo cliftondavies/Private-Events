@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user, notice: 'Your account was successfully created!'
     else
-      flash.now[:error] = 'We could not create your account. Please try again.'
+      flash.now[:alert] = 'We could not create your account. Please try again.'
       render :new
     end
   end

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: 'Sign in successful!'
     else
-      flash.now[:error] = 'Incorrect username, please try again.'
+      flash.now[:alert] = 'Incorrect username, please try again.'
       render :new
     end
   end
