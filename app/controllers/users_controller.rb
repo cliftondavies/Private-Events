@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
-  before_action :require_login, except: %i[new create]
-
-  def show; end
+  before_action :authorise, except: %i[new create]
 
   def new
     @user = User.new
@@ -11,30 +9,28 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @user.save
+      redirect_to @user, notice: 'Your account was successfully created!'
+    else
+      flash.now[:error] = 'We could not create your account. Please try again.'
+      render :new
     end
   end
 
+  def show; end
+
   private
 
-  def require_login
-    unless session[:current_user_id]
-      flash[:error] = 'You must be logged in to view this page'
-      redirect_to new_session_path
-    end
+  def authorise
+    redirect_to new_session_path, alert: 'You must be signed in to view this page.' unless signed_in?
+  end
+
+  def user_params
+    params.require(:user).permit(:username)
   end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
-  end
-
-  def user_params
-    params.require(:user).permit(:username)
   end
 end
