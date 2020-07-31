@@ -1,6 +1,10 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
-<p>
+<h2>Event's Show Page</h2>
+
+<%= @event.creator.username %>
+
+<!--<p>
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
@@ -13,7 +17,7 @@
 <p>
   <strong>Location:</strong>
   <%= @event.location %>
-</p>
+</p>-->
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<!-- <%= link_to 'Edit', edit_event_path(@event) %> | -->
 <%= link_to 'Back', events_path %>
