@@ -1,13 +1,14 @@
 <!--<p id="notice"><%= notice %></p>-->
 
 <h2>Events</h2>
-  <% @events.each do |event| %>
-  <ul>
-    <li><%= event.description %></li>
-    <li><%= event.event_date %></li>
-    <li><%= event.location %></li>
-    <li><%= link_to 'Show', event %></li>
-  </ul>
-  <% end %>
+
+<% @events.each do |event| %>
+<ul>
+  <li><%= event.description %></li>
+  <li><%= event.event_date %></li>
+  <li><%= event.location %></li>
+  <li><%= link_to 'Show', event %></li>
+</ul>
+<% end %>
 
 <%= link_to 'New Event', new_event_path %>

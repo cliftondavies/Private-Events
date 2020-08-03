@@ -5,11 +5,12 @@
 <%= @event.creator.username %>
 
 <p>Attendees</p>
+
 <ul>
-  <% @event.attendees.each do |attendee| %>
-    <li><%= attendee.username %></li>
-    <li><%= link_to 'Show', attendee %></li>
-  <% end %>
+<% @event.attendees.each do |attendee| %>
+  <li><%= attendee.username %></li>
+  <li><%= link_to 'Show', attendee %></li>
+<% end %>
 </ul>
 
 <%= link_to 'All Events', events_path %>

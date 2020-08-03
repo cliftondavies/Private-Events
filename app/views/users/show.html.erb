@@ -1,15 +1,28 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
-<h2>Hey <%= @user.username %>, here is a list of the events you've created!</h2>
+<h2>Hey <%= @user.username %>!</h2>
 
-  <% current_user.events.each do |event| %>
-  <ul>
-    <li><%= event.description %></li>
-    <li><%= event.event_date %></li>
-    <li><%= event.location %></li>
-    <li><%= link_to 'Show', event %></li>
-  </ul>
-  <% end %>
+<p>Here is a list of the events you have created</p>
+
+<% current_user.events.each do |event| %>
+<ul>
+  <li><%= event.description %></li>
+  <li><%= event.event_date %></li>
+  <li><%= event.location %></li>
+  <li><%= link_to 'Show', event %></li>
+</ul>
+<% end %>
+
+<p>Here is a list of the events you are attending</p>
+
+<% current_user.attended_events.each do |event| %>
+<ul>
+  <li><%= event.description %></li>
+  <li><%= event.event_date %></li>
+  <li><%= event.location %></li>
+  <li><%= link_to 'Show', event %></li>
+</ul>
+<% end %>
 
 <!--<p>
   <strong>Username:</strong>
