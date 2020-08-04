@@ -2,9 +2,9 @@
 
 <h2>Event's Show Page</h2>
 
-<%= @event.creator.username %>
+<h3>Event Creator: <%= @event.creator.username %> </h3>
 
-<p>Attendees</p>
+<h3>Event Attendees</h3>
 
 <ul>
 <% @event.attendees.each do |attendee| %>
@@ -13,7 +13,7 @@
 <% end %>
 </ul>
 
-<%= link_to 'All Events', events_path %>
+<%= link_to 'See all Events', events_path %>
 
 <!--<p>
   <strong>Description:</strong>
@@ -29,6 +29,3 @@
   <strong>Location:</strong>
   <%= @event.location %>
 </p>-->
-
-<!-- <%= link_to 'Edit', edit_event_path(@event) %> | -->
-<%= link_to 'Back', events_path %>
