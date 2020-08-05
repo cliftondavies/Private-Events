@@ -9,11 +9,11 @@
 <ul>
 <% @event.attendees.each do |attendee| %>
   <li><%= attendee.username %></li>
-  <li><%= link_to 'Show', attendee %></li>
 <% end %>
 </ul>
 
-<%= link_to 'See all Events', events_path %>
+<%= link_to 'See all Events | ', events_path %>
+<%= link_to 'Create New Event', new_event_path %>
 
 <!--<p>
   <strong>Description:</strong>

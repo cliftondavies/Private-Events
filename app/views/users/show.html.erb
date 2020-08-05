@@ -2,7 +2,7 @@
 
 <h2>Hey <%= @user.username %>!</h2>
 
-<p>Here is a list of the events you have created</p>
+<p>Here is a list of the events you have created:</p>
 
 <% current_user.events.each do |event| %>
 <ul>
@@ -13,7 +13,7 @@
 </ul>
 <% end %>
 
-<p>Here is a list of the events you are attending</p>
+<p>Here is a list of the events you are attending:</p>
 
 <% current_user.attended_events.each do |event| %>
 <ul>
@@ -29,4 +29,5 @@
   <%= @user.username %>
 </p>-->
 
-<%= link_to 'Events', events_path %>-->
+<%= link_to 'View all Events | ', events_path %>
+<%= link_to 'Create New Event', new_event_path %>
