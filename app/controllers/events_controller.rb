@@ -30,12 +30,11 @@ class EventsController < ApplicationController
     redirect_to new_session_path, alert: 'You must be signed in to view this page.' unless signed_in?
   end
 
-  def event_params
-    params.require(:event).permit(:description, :event_date, :location)
-  end
-
-  # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def event_params
+    params.require(:event).permit(:description, :event_date, :location)
   end
 end
