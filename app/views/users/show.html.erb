@@ -1,8 +1,6 @@
-<!-- <p id="notice"><%= notice %></p> -->
+<h2>Hey <%= current_user.username %>!</h2>
 
-<h2>Hey <%= @user.username %>!</h2>
-
-<p>Here is a list of the events you have created:</p>
+<p>Here is a list of the events you have <strong>created</strong>:</p>
 
 <% current_user.events.each do |event| %>
 <ul>
@@ -13,9 +11,9 @@
 </ul>
 <% end %>
 
-<p>Here is a list of the events you are attending:</p>
+<p>Here is a list of <strong>upcoming</strong> events you will be attending:</p>
 
-<% current_user.attended_events.each do |event| %>
+<% @upcoming_events.each do |event| %>
 <ul>
   <li><%= event.description %></li>
   <li><%= event.event_date %></li>
@@ -24,10 +22,16 @@
 </ul>
 <% end %>
 
-<!--<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>-->
+<p>Here is a list of <strong>previous</strong> events you attended:</p>
+
+<% @previous_events.each do |event| %>
+<ul>
+  <li><%= event.description %></li>
+  <li><%= event.event_date %></li>
+  <li><%= event.location %></li>
+  <li><%= link_to 'Show', event %></li>
+</ul>
+<% end %>
 
 <%= link_to 'View all Events | ', events_path %>
 <%= link_to 'Create New Event', new_event_path %>
