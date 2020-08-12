@@ -1,6 +1,6 @@
 # Private Events
 
-> A application that allows users to create and view upcoming and past events.
+> An application that allows users to create and view upcoming and past events.
 
 ## Functionality
 
