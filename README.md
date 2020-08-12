@@ -4,11 +4,12 @@
 
 ## Functionality
 
-- User Authentication
+#### User Authentication
  - Create user account
  - Log in
  - Sign out
-- Event Management
+
+#### Event Management
  - Create event
  - View a specific event
  - View a list of all upcoming and past events
