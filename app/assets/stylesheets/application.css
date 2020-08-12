@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .top {
+.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
