@@ -3,7 +3,8 @@ class EventsController < ApplicationController
   before_action :authorise, except: %i[index show]
 
   def index
-    @events = Event.all
+    @upcoming = Event.upcoming
+    @past = Event.past
   end
 
   def show
