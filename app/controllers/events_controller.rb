@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @rsvp = Rsvp.new
+    @rsvp = @event.rsvps.build
   end
 
   def new
@@ -29,7 +29,7 @@ class EventsController < ApplicationController
   private
 
   def authorise
-    redirect_to new_session_path, alert: 'You must be signed in to view this page.' unless signed_in?
+    redirect_to new_session_path, alert: 'You must be signed in to create an event.' unless signed_in?
   end
 
   def set_event

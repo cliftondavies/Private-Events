@@ -23,7 +23,7 @@ RSpec.describe 'EventManagement', type: :system do
     context 'when signed out' do
       scenario 'cannot create a new event' do
         visit new_event_path
-        expect(page).to have_content 'You must be signed in to view this page.'
+        expect(page).to have_content 'You must be signed in to create an event.'
       end
     end
   end

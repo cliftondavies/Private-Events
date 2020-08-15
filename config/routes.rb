@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get 'rsvps/create'
   resources :events, only: %i[index new create show] do
     resources :rsvps, only: :create
   end
