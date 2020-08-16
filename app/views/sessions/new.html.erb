@@ -1,0 +1,12 @@
+<h2>Log In</h2>
+
+<%= form_with url: sessions_path, local: true do |form| %>
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Log in" %>
+  </div>
+<% end %>
