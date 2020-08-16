@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <section class="top">
+      <%= link_to 'PrivateEvents', root_path %>
+
+      <ul>
+        <%= top_links %>
+      </ul>
+    </section>
+
     <%= yield %>
   </body>
 </html>

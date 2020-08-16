@@ -1,0 +1,16 @@
+<h2>Event's Show Page</h2>
+
+<h3>Event Creator: <%= @event.creator.username %> </h3>
+
+<h3>Event Attendees</h3>
+
+<ul>
+<% @event.attendees.each do |attendee| %>
+  <li><%= attendee.username %></li>
+<% end %>
+</ul>
+
+<%= rsvp_status(@event) %> <br />
+
+<%= link_to 'See all Events | ', events_path %>
+<%= link_to 'Create New Event', new_event_path %>
