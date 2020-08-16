@@ -1,19 +1,18 @@
 # Private Events
 
-> An application that allows users to create and view upcoming and past events.
+> An application that allows users to create, rsvp to, and view upcoming and past events.
 
 ## Functionality
 
 #### User Authentication
  - Create user account
- - Log in
+ - Sign in
  - Sign out
 
 #### Event Management
- - Create event
- - View a specific event
- - View a list of all upcoming and past events
- - View a list of created and RSVPed events
+ - Create event when signed in
+ - Rsvp to attend an event when signed in
+ - Rsvp to attend an event only once
 
 ## :toolbox: Tools & Technologies Used
 
